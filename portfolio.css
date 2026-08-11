@@ -4,6 +4,7 @@
     --secondary-color: #172a45; /* Dark blue */
     --accent-color: #64ffda; /* Teal accent */
     --text-color: #ccd6f6; /* Light gray */
+    --text-light: #e6eefc; /* Light text for subtle card paragraphs */
     --text-secondary: #8892b0; /* Gray */
     --dark-bg: #020c1b; /* Dark background */
     --card-bg: #112240; /* Card background */
@@ -118,6 +119,17 @@ a:hover {
 .btn-secondary:hover {
     background-color: rgba(100, 255, 218, 0.08);
 }
+
+/* Shared card base to consolidate visual treatment */
+.card-base {
+    background-color: var(--card-bg);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
 
 /* Navigation */
 #navbar {
@@ -659,6 +671,15 @@ footer {
 }
 
 /* Responsive Styles */
+/* Reduce motion for users who prefer less animation */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
 @media (max-width: 992px) {
     .hero-content {
         flex-direction: column;
@@ -668,6 +689,13 @@ footer {
     .hero-text {
         padding-right: 0;
         margin-bottom: 30px;
+    }
+
+    /* Make hero image more flexible on medium screens */
+    .hero-image {
+        flex: 0 0 auto;
+        max-width: 320px;
+        margin: 0 auto 18px;
     }
 
     .about-content {
