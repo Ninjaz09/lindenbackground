@@ -758,8 +758,20 @@ footer {
         font-size: 1.9rem;
     }
 
+    /* Show a smaller centered portrait on very small screens */
     .profile-img {
-        display: none;
+        display: block;
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 18px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid rgba(100, 255, 218, 0.45);
+    }
+
+    /* Place the image above the text on very small screens */
+    .hero-image {
+        order: -1;
     }
 
     .skills-grid {
