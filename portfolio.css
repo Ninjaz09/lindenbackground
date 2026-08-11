@@ -664,18 +664,24 @@ footer {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .hero-text {
         padding-right: 0;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
     }
-    
+
     .about-content {
         flex-direction: column;
+        gap: 24px;
     }
-    
+
     .contact-content {
         flex-direction: column;
+        gap: 20px;
+    }
+
+    .skills-grid {
+        gap: 22px;
     }
 }
 
@@ -683,55 +689,101 @@ footer {
     .hamburger {
         display: block;
     }
-    
+
     .nav-links {
         position: absolute;
-        top: 80px;
+        top: 72px;
         left: -100%;
         width: 100%;
         background-color: var(--primary-color);
         flex-direction: column;
         align-items: center;
-        padding: 20px 0;
+        padding: 16px 0;
         transition: var(--transition);
     }
-    
+
     #menu-toggle:checked ~ .nav-links {
         left: 0;
     }
-    
+
     .nav-links li {
-        margin: 15px 0;
+        margin: 12px 0;
     }
-    
+
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
-    
-    .hero-text h2 {
-        font-size: 1.5rem;
+
+    .hero-text p {
+        font-size: 0.98rem;
+        max-width: 100%;
     }
-    
+
     .profile-img {
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
     }
-    
+
     .section {
-        padding: 70px 0;
+        padding: 60px 0;
+    }
+
+    /* Stack grids for smaller screens */
+    .project-grid,
+    .certificates-grid,
+    .tools-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 22px;
+    }
+
+    .skill-category ul {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .skill-category {
+        padding: 22px;
     }
 }
 
 @media (max-width: 576px) {
     h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
-    
+
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
-    
-    .certificates-grid {
+
+    .hero-text h1 {
+        font-size: 1.9rem;
+    }
+
+    .profile-img {
+        display: none;
+    }
+
+    .skills-grid {
         grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .skill-category ul li {
+        padding: 9px 12px;
+        font-size: 0.92rem;
+    }
+
+    .skill-category {
+        border-radius: 14px;
+        padding: 18px;
+    }
+
+    .contact-cta {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
     }
 }
