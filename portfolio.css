@@ -491,6 +491,166 @@ a:hover {
     color: var(--accent-color);
 }
 
+/* Security awareness simulation */
+.awareness-trigger:focus-visible,
+.awareness-close:focus-visible,
+.awareness-acknowledge:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
+.awareness-dialog {
+    width: min(620px, calc(100% - 32px));
+    max-height: calc(100vh - 32px);
+    padding: 0;
+    border: 1px solid rgba(100, 255, 218, 0.45);
+    border-radius: 12px;
+    color: var(--text-color);
+    background: var(--dark-bg);
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.awareness-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(4px);
+}
+
+.awareness-dialog-content {
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.awareness-dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.awareness-kicker {
+    color: var(--accent-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.awareness-close {
+    border: 0;
+    color: var(--text-color);
+    background: transparent;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 1;
+    padding: 2px 8px;
+}
+
+.awareness-close:hover {
+    color: #fff;
+}
+
+.simulation-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 28px 0 18px;
+    color: #ff8f8f;
+    font-size: clamp(1.2rem, 4vw, 1.75rem);
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff5f5f;
+    box-shadow: 0 0 16px rgba(255, 95, 95, 0.8);
+}
+
+.awareness-dialog h2 {
+    margin-bottom: 14px;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+.awareness-lead {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.simulation-terminal {
+    margin: 24px 0;
+    padding: 18px;
+    border: 1px solid rgba(100, 255, 218, 0.22);
+    border-radius: 6px;
+    background: #010509;
+    color: #b7ffe9;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+.simulation-terminal p {
+    margin-bottom: 8px;
+    color: inherit;
+}
+
+.simulation-terminal p:last-child {
+    margin-bottom: 0;
+}
+
+.terminal-prompt {
+    color: var(--accent-color);
+}
+
+.terminal-alert {
+    color: #ff9b9b !important;
+}
+
+.terminal-muted {
+    color: #849a9d !important;
+}
+
+.awareness-guidance {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 18px;
+}
+
+.awareness-guidance h3 {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.awareness-guidance ul {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--text-light);
+}
+
+.awareness-guidance li {
+    margin-bottom: 8px;
+}
+
+.awareness-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 24px 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.awareness-note i {
+    color: var(--accent-color);
+    margin-top: 4px;
+}
+
+.awareness-acknowledge {
+    width: 100%;
+    text-align: center;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .certificates-grid {
@@ -505,6 +665,10 @@ a:hover {
     
     .certificate-info {
         padding: 15px;
+    }
+
+    .awareness-dialog-content {
+        padding: 22px;
     }
 }
 
